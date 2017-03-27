@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Scale_ImageView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O1z-R5-xvh" userLabel="Filter View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="evO-GM-TEx">
+                                <rect key="frame" x="67" y="213" width="240" height="240"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="26w-35-zsN"/>
+                                    <constraint firstAttribute="height" constant="240" id="cqu-eC-9zt"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4Ph-aI-CHu" appends="YES" id="BGP-SO-8r6"/>
+                                    <outletCollection property="gestureRecognizers" destination="uy8-3b-j02" appends="YES" id="kd8-dU-HSZ"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="O1z-R5-xvh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2QW-iS-CCn"/>
+                            <constraint firstItem="evO-GM-TEx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="60a-Wc-dkO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="O1z-R5-xvh" secondAttribute="bottom" id="6Nq-Ks-Y7u"/>
+                            <constraint firstItem="O1z-R5-xvh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="K1O-bD-Z7j"/>
+                            <constraint firstAttribute="trailing" secondItem="O1z-R5-xvh" secondAttribute="trailing" id="KAr-4J-dqk"/>
+                            <constraint firstItem="evO-GM-TEx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QMh-Ci-Rzf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="filterView" destination="O1z-R5-xvh" id="HST-Xg-Jz6"/>
+                        <outlet property="imageView" destination="evO-GM-TEx" id="6yV-cU-rf6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="4Ph-aI-CHu">
+                    <connections>
+                        <action selector="onPinchGesture:" destination="BYZ-38-t0r" id="rP9-Vm-a0I"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="A8n-xe-HEK"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="2" id="uy8-3b-j02">
+                    <connections>
+                        <action selector="onPanGesture:" destination="BYZ-38-t0r" id="4q1-U1-Nrl"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="zs5-LH-X6I"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Image" width="1389" height="1389"/>
+    </resources>
+</document>
