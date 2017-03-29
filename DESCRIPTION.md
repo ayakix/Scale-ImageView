@@ -152,7 +152,7 @@ extension ViewController: UIGestureRecognizerDelegate {
 Interface Builderでのビューの重なりによっては、前面にビューを持ってくる必要があります。
 また、イメージビューが入れ子構造になっている場合は、親要素ごと最前面に表示する必要があります。
 
-```
+```swift
 self.view.bringSubview(toFront: imageView)
 
 or
