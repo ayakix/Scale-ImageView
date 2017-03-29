@@ -147,6 +147,20 @@ extension ViewController: UIGestureRecognizerDelegate {
 }
 ```
 
+## 注意点
+機能を実現するためには、イメージビューを最前面に表示し、その下にフィルタービューを表示する必要があります。
+Interface Builderでのビューの重なりによっては、前面にビューを持ってくる必要があります。
+また、イメージビューが入れ子構造になっている場合は、親要素ごと最前面に表示する必要があります。
+
+```
+self.view.bringSubview(toFront: imageView)
+
+or
+
+self.view.bringSubview(toFront: scrollView)
+scrollView.bringSubview(toFront: stackView)
+stackView.bringSubview(toFront: imageView)
+```
 
 ## サンプル
 [Scale-ImageView@github](https://github.com/ayakix/Scale-ImageView)に動作するプロジェクトがあります。
